@@ -26,3 +26,9 @@ blockquote footer {
 blockquote footer:before {
     content: "\2015";
 }
+
+button {
+    display: block;
+    margin: 20px auto;
+    cursor: pointer;
+}

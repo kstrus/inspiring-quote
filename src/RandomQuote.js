@@ -12,7 +12,7 @@ const RANDOM_QUOTE_QUERY = gql`
 `;
 
 const RandomQuote = () => {
-    const { data, error, loading } = useQuery(RANDOM_QUOTE_QUERY, {
+    const { data, error, loading, refetch } = useQuery(RANDOM_QUOTE_QUERY, {
         onError: error => console.log(error),
         errorPolicy: 'all'
     });
@@ -20,7 +20,10 @@ const RandomQuote = () => {
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Something went wrong :(</div>;
 
-    return <Quote {...data.randomQuote} />;
+    return <>
+        <Quote {...data.randomQuote} />
+        <button onClick={() => refetch()}>Get new quote</button>
+    </>
 };
 
 export default RandomQuote;
