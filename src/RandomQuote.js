@@ -12,10 +12,13 @@ const RANDOM_QUOTE_QUERY = gql`
 `;
 
 const RandomQuote = () => {
-    const { data, error, loading } = useQuery(RANDOM_QUOTE_QUERY);
+    const { data, error, loading } = useQuery(RANDOM_QUOTE_QUERY, {
+        onError: error => console.log(error),
+        errorPolicy: 'all'
+    });
 
     if (loading) return <div>Loading...</div>;
-    if (error) return <div>Something went wrong</div>;
+    if (error) return <div>Something went wrong :(</div>;
 
     return <Quote {...data.randomQuote} />;
 };
