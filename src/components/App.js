@@ -1,4 +1,4 @@
-import './App.css';
+import '../styles/App.css';
 import RandomQuote from './RandomQuote';
 
 const App = () => {

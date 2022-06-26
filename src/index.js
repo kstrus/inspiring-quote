@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { ApolloClient, InMemoryCache, HttpLink, ApolloProvider } from '@apollo/client';
 
-import './index.css';
-import App from './App';
+import './styles/index.css';
+import App from './components/App';
 
 const URL = 'https://hidden-fortress-46243.herokuapp.com/';
 const client = new ApolloClient({
