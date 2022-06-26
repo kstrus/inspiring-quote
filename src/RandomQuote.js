@@ -14,7 +14,8 @@ const RANDOM_QUOTE_QUERY = gql`
 const RandomQuote = () => {
     const { data, error, loading, refetch } = useQuery(RANDOM_QUOTE_QUERY, {
         onError: error => console.log(error),
-        errorPolicy: 'all'
+        errorPolicy: 'all',
+        fetchPolicy: 'no-cache'
     });
 
     if (loading) return <div>Loading...</div>;
